@@ -1,205 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mujahid Pasha | Internship Showcase</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Internship learning showcase of Mujahid Pasha P M at BluNet IT Services.">
+<title>Internship Showcase | Mujahid Pasha P M</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f5fa;
-      color: #17233c;
-      line-height: 1.7;
-    }
+<style>
+:root {
+  --navy: #10213b;
+  --blue: #176b87;
+  --teal: #19a7a1;
+  --light: #f3f7fb;
+  --white: #ffffff;
+  --text: #26364a;
+  --muted: #718096;
+  --border: #e2eaf2;
+}
 
-    header {
-      background: linear-gradient(135deg, #101d3b, #155e75);
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header .tag {
-      display: inline-block;
-      border: 1px solid #8de5e7;
-      border-radius: 30px;
-      padding: 5px 15px;
-      margin-bottom: 18px;
-      color: #b8f7f3;
-      font-size: 13px;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header h1 {
-      font-size: clamp(30px, 6vw, 48px);
-      margin-bottom: 10px;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.7;
+}
 
-    header p {
-      color: #dceaf7;
-      font-size: 17px;
-    }
+nav {
+  background: var(--navy);
+  color: var(--white);
+  padding: 16px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 18px;
-    }
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: .3px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 16px;
-      box-shadow: 0 5px 20px #17233c0d;
-      border: 1px solid #e5eaf2;
-    }
+.brand span {
+  color: #5ce1d5;
+}
 
-    h2 {
-      color: #155e75;
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
 
-    .details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 15px;
-    }
+nav a:hover {
+  color: #5ce1d5;
+}
 
-    .detail {
-      background: #f3f8fb;
-      padding: 16px;
-      border-radius: 10px;
-    }
+.hero {
+  background: linear-gradient(125deg, #10213b, #176b87);
+  color: white;
+  padding: 75px 8% 85px;
+  position: relative;
+  overflow: hidden;
+}
 
-    .detail span {
-      display: block;
-      color: #64748b;
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
+.hero::after {
+  content: "";
+  width: 300px;
+  height: 300px;
+  border: 45px solid rgba(255,255,255,.06);
+  border-radius: 50%;
+  position: absolute;
+  right: -80px;
+  top: -100px;
+}
 
-    .detail strong {
-      overflow-wrap: anywhere;
-    }
+.hero-content {
+  max-width: 950px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
 
-    .topics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-    }
+.badge {
+  display: inline-block;
+  border: 1px solid #62d9d1;
+  color: #a9fff6;
+  padding: 6px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
 
-    .topic {
-      padding: 16px;
-      border-radius: 10px;
-      background: #edf8f8;
-      border-left: 4px solid #1596a3;
-    }
+.hero h1 {
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
 
-    .topic strong {
-      display: block;
-      margin-bottom: 4px;
-    }
+.hero h1 span {
+  color: #68e0d6;
+}
 
-    .topic p {
-      font-size: 14px;
-      color: #526174;
-    }
+.hero p {
+  color: #e0edf7;
+  max-width: 650px;
+  font-size: 17px;
+}
 
-    .note {
-      background: #fff8e8;
-      border-left: 4px solid #e6a23c;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
+.hero-label {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #bce6ed;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 15px;
-      color: #64748b;
-      font-size: 13px;
-    }
-  </style>
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.section {
+  margin-bottom: 28px;
+  scroll-margin-top: 25px;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.section-heading small {
+  color: var(--teal);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: 27px;
+  margin-top: 3px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 28px rgba(16,33,59,.04);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  background: #f5f9fc;
+  border: 1px solid #e8eff5;
+  padding: 18px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.info-item small {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+.info-item strong {
+  color: var(--navy);
+  font-size: 16px;
+}
+
+.timeline {
+  border-left: 3px solid #b9ece7;
+  padding-left: 23px;
+  margin: 10px 0 0 8px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--teal);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #b9ece7;
+}
+
+.timeline-item h3 {
+  font-size: 17px;
+  color: var(--navy);
+}
+
+.timeline-item p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.learning-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 23px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.learning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(16,33,59,.08);
+}
+
+.learning-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: #e5f7f5;
+  color: #087d7b;
+  font-size: 23px;
+  margin-bottom: 14px;
+}
+
+.learning-card h3 {
+  color: var(--navy);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.learning-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  background: #edf5fa;
+  color: #315b73;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.about-text {
+  color: #526174;
+  font-size: 15px;
+}
+
+.notice {
+  background: #fff8e9;
+  border: 1px solid #f5e4bc;
+  border-left: 4px solid #e7ad40;
+  padding: 17px;
+  border-radius: 10px;
+  color: #775b22;
+  font-size: 13px;
+  margin-top: 18px;
+}
+
+.footer {
+  background: var(--navy);
+  color: #d8e5f0;
+  text-align: center;
+  padding: 28px 18px;
+  font-size: 13px;
+}
+
+.footer strong {
+  color: #6ce0d7;
+}
+
+@media (max-width: 650px) {
+  nav {
+    padding: 15px 5%;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 12px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .hero {
+    padding: 55px 7%;
+  }
+
+  .container {
+    padding: 25px 15px;
+  }
+
+  .info-grid,
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 19px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="tag">INTERNSHIP SHOWCASE</div>
-    <h1>Mujahid Pasha P M</h1>
-    <p>Learning • Exploring • Building Skills</p>
-  </header>
+<nav>
+  <div class="brand">INTERNSHIP<span>.</span></div>
+  <div>
+    <a href="#overview">Overview</a>
+    <a href="#journey">Journey</a>
+    <a href="#learning">Learning</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
 
-  <main>
-    <section class="card">
+<header class="hero">
+  <div class="hero-content">
+    <div class="badge">PROFESSIONAL LEARNING SHOWCASE</div>
+    <h1>Mujahid Pasha <span>P M</span></h1>
+    <p>
+      Documenting my internship journey, technical learning,
+      and professional development at BluNet IT Services.
+    </p>
+    <div class="hero-label">
+      DevOps with Cloud Intern &nbsp; | &nbsp; October – November 2026
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section" id="overview">
+    <div class="section-heading">
+      <small>01 / Overview</small>
       <h2>Internship Overview</h2>
-      <div class="details">
-        <div class="detail">
-          <span>Organization</span>
+      <p>Key details about my internship experience.</p>
+    </div>
+
+    <div class="card">
+      <div class="info-grid">
+        <div class="info-item">
+          <small>Organization</small>
           <strong>BluNet IT Services</strong>
         </div>
-        <div class="detail">
-          <span>Internship Role</span>
+        <div class="info-item">
+          <small>Internship Role</small>
           <strong>DevOps with Cloud Intern</strong>
         </div>
-        <div class="detail">
-          <span>Start Date</span>
-          <strong>5 October 2026</strong>
+        <div class="info-item">
+          <small>Start Date</small>
+          <strong>05 October 2026</strong>
         </div>
-        <div class="detail">
-          <span>Planned End Date</span>
-          <strong>5 November 2026</strong>
+        <div class="info-item">
+          <small>Planned End Date</small>
+          <strong>05 November 2026</strong>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card">
+  <section class="section" id="journey">
+    <div class="section-heading">
+      <small>02 / Journey</small>
+      <h2>My Learning Journey</h2>
+      <p>A structured view of my internship period.</p>
+    </div>
+
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Internship Begins</h3>
+          <p>05 October 2026 · Beginning the internship and exploring assigned learning areas.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Technical Learning</h3>
+          <p>Exploring DevOps, cloud fundamentals, AI prompt engineering, and web development concepts.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Planned Completion</h3>
+          <p>05 November 2026 · Planned end of the internship period.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="learning">
+    <div class="section-heading">
+      <small>03 / Technical Skills</small>
       <h2>Learning Areas</h2>
-      <div class="topics">
-        <div class="topic">
-          <strong>DevOps with Cloud</strong>
-          <p>Understanding DevOps concepts and cloud technology fundamentals.</p>
-        </div>
-        <div class="topic">
-          <strong>AI Prompt Engineering</strong>
-          <p>Learning to write useful prompts and work effectively with AI tools.</p>
-        </div>
-        <div class="topic">
-          <strong>Web Development</strong>
-          <p>Exploring website structure, frontend concepts, and backend fundamentals.</p>
-        </div>
-        <div class="topic">
-          <strong>AI Tools</strong>
-          <p>Exploring AI-assisted tools for learning and technical tasks.</p>
-        </div>
-      </div>
-    </section>
+      <p>Technical subjects explored during my internship.</p>
+    </div>
 
-    <section class="card">
+    <div class="learning-grid">
+      <article class="learning-card">
+        <div class="learning-icon">☁</div>
+        <h3>DevOps with Cloud</h3>
+        <p>
+          Exploring DevOps fundamentals, development workflows,
+          cloud concepts, and the role of automation in software delivery.
+        </p>
+        <div class="tag-list">
+          <span class="tag">DevOps Basics</span>
+          <span class="tag">Cloud Concepts</span>
+          <span class="tag">Automation</span>
+        </div>
+      </article>
+
+      <article class="learning-card">
+        <div class="learning-icon">✦</div>
+        <h3>AI Prompt Engineering</h3>
+        <p>
+          Learning how to formulate clear instructions for AI tools
+          and use them to support learning and technical tasks.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Prompt Design</span>
+          <span class="tag">AI Tools</span>
+        </div>
+      </article>
+
+      <article class="learning-card">
+        <div class="learning-icon">⌘</div>
+        <h3>Web Development</h3>
+        <p>
+          Exploring website structure, frontend development,
+          and the basic concepts behind backend applications.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Frontend</span>
+          <span class="tag">HTML & CSS</span>
+          <span class="tag">Backend Basics</span>
+        </div>
+      </article>
+
+      <article class="learning-card">
+        <div class="learning-icon">◎</div>
+        <h3>AI-Assisted Learning</h3>
+        <p>
+          Exploring how AI-based tools can support problem-solving,
+          technical understanding, and productivity.
+        </p>
+        <div class="tag-list">
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Productivity</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-heading">
+      <small>04 / About</small>
       <h2>About This Showcase</h2>
-      <p>
-        This page presents my internship role, learning areas, and professional
-        development during my internship at BluNet IT Services.
-        It is a personal showcase and not an official certificate verification page.
+    </div>
+
+    <div class="card">
+      <p class="about-text">
+        This website is my personal internship learning showcase.
+        It presents my internship role, learning areas, and professional
+        development during my time with BluNet IT Services.
+        I aim to continue improving my technical knowledge and practical skills.
       </p>
-    </section>
 
-    <p class="note">
-      Note: The internship dates shown are the planned period. Please confirm
-      the final dates with the organization, as the issued certificate may show
-      a different end date.
-    </p>
-  </main>
+      <div class="notice">
+        Internship dates shown here represent the planned period and should
+        be confirmed with the organization. This personal page is not an
+        official certificate verification service.
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    Personal Internship Showcase · 2026
-  </footer>
+</main>
+
+<footer class="footer">
+  <p><strong>Mujahid Pasha P M</strong></p>
+  <p>Internship Learning Showcase · 2026</p>
+</footer>
 
 </body>
 </html>
